@@ -1,7 +1,10 @@
 - clean: ['~']
 
+# null (or ~) value means symlink from file with same name without leading dot
 - link:
     ~/.dotfiles: ''
+    ~/.vim: ~
+    ~/.vimrc: ~
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
