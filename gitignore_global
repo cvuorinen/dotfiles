@@ -1,0 +1,13 @@
+# Other misc files   #
+######################
+.vagrant
+.ant_targets
+
+# IDE specific files #
+######################
+.idea
+.settings
+.project
+.classpath
+.vscode
+.cache

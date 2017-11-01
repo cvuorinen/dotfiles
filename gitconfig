@@ -1,0 +1,34 @@
+[core]
+    excludesfile = /home/kalle/.gitignore_global
+    autocrlf = input
+[user]
+    name = Carl Vuorinen
+    email = carl.vuorinen@gmail.com
+[color]
+    ui = true
+[push]
+    default = simple
+[alias]
+    c = commit
+    a = add
+    b = branch
+    p = pull --rebase
+    s = status
+    co = checkout
+    cob = checkout -b
+    ca = commit --amend
+    undo = reset HEAD~1 --mixed
+    wip = commit -am "WIP"
+    trash = !git add . && git commit -m 'trash' && git reset --hard HEAD^
+    clean-merged = !git branch --merged master | grep -v "master$" | xargs -n 1 git branch -d
+    latest = for-each-ref --sort=-committerdate refs/heads/
+    lol = log --pretty=oneline --abbrev-commit --graph --decorate
+[diff]
+    tool = vimdiff
+[difftool]
+    prompt = false
+[rerere]
+    enabled = true
+    autoupdate = true
+[init]
+

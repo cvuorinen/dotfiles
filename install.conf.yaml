@@ -16,6 +16,10 @@
     ~/.fonts: ~
     ~/.config/terminator: config/terminator
 
+    # git
+    ~/.gitconfig: ~
+    ~/.gitignore_global: ~
+
     # vim
     ~/.vimrc: ~
     ~/.vim/bundle: vim/bundle
