@@ -121,6 +121,7 @@ let g:ctrlp_custom_ignore = 'node_modules\|bower_components\|vendor\|git|static\
 
 " xolox/vim-session
 """""""""""""""""""
+let g:session_autosave = 'no'
 let g:session_autoload = 'no'
 
 " xolox/vim-notes

@@ -1,3 +1,8 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
 - clean: ['~']
 
 # null (or ~) value means symlink from file with same name without leading dot
