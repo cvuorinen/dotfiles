@@ -3,6 +3,13 @@
 # null (or ~) value means symlink from file with same name without leading dot
 - link:
     ~/.dotfiles: ''
+    
+    # zsh
+    ~/.oh-my-zsh: ~
+    ~/antigen: ~
+    ~/.zshrc: ~
+    
+    # vim
     ~/.vimrc: ~
     ~/.vim/bundle: vim/bundle
 
