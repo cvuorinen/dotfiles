@@ -9,11 +9,12 @@
 - link:
     ~/.dotfiles: ''
 
-    # zsh
+    # zsh & terminator
     ~/.oh-my-zsh: ~
     ~/antigen: ~
     ~/.zshrc: ~
     ~/.fonts: ~
+    ~/.config/terminator: config/terminator
 
     # vim
     ~/.vimrc: ~

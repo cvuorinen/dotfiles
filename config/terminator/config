@@ -1,0 +1,60 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  title_hide_sizetext = True
+  title_transmit_bg_color = "#009688"
+[keybindings]
+  go_down = <Primary><Shift>Down
+  go_left = <Primary><Shift>Left
+  go_right = <Primary><Shift>Right
+  go_up = <Primary><Shift>Up
+  paste = <Primary>v
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+  [[New Layout]]
+    [[[child0]]]
+      order = 0
+      parent = ""
+      position = 57:24
+      size = 1543, 876
+      type = Window
+    [[[child1]]]
+      order = 0
+      parent = child0
+      position = 969
+      type = HPaned
+    [[[terminal2]]]
+      order = 0
+      parent = child1
+      profile = default
+      type = Terminal
+    [[[terminal3]]]
+      order = 1
+      parent = child1
+      profile = default
+      type = Terminal
+[plugins]
+[profiles]
+  [[default]]
+    background_color = "#263238"
+    background_darkness = 0.88
+    background_image = None
+    background_type = transparent
+    cursor_color = "#58e0d3"
+    font = "SourceCodePro+Powerline+Awesome Regular, 13"
+    foreground_color = "#e6eaed"
+    palette = "#263238:#ff5252:#9ccc65:#fee94e:#2b98f0:#b38bfc:#68b6f3:#eceff1:#617d8a:#fc625d:#8cb75e:#fee94e:#2b98f0:#b38bfc:#68b6f3:#ffffff"
+    use_system_font = False
+  [[custom]]
+    background_color = "#263238"
+    background_darkness = 0.9
+    background_image = None
+    font = "SourceCodePro+Powerline+Awesome Regular, 13"
+    foreground_color = "#e6eaed"
+    palette = "#263238:#ff5252:#9ccc65:#fee94e:#2b98f0:#b38bfc:#68b6f3:#eceff1:#617d8a:#fc625d:#9ccc65:#fee94e:#2b98f0:#b38bfc:#68b6f3:#ffffff"
+    use_system_font = False
