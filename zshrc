@@ -12,6 +12,10 @@ export TERM="xterm-256color"
 
 #source $ZSH/oh-my-zsh.sh
 
+# set vim as default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
@@ -35,10 +39,6 @@ alias cp="cp -iv"     # interactive, verbose
 alias rm="rm -i"      # interactive
 alias mv="mv -iv"     # interactive, verbose
 alias grep="grep -i"  # ignore case
-
-alias ll="exa -l --git --time-style=long-iso --group-directories-first"
-alias l="exa -la --git --time-style=long-iso --group-directories-first"
-alias la="exa -lahg --git --time-style=long-iso --group-directories-first"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -81,7 +81,7 @@ export PATH=$PATH:vendor/bin:~/.composer/vendor/bin
 export PATH=$PATH:node_modules/.bin:~/.npm/bin
 
 # add yarn bin dir to PATH
-export PATH="$PATH:`yarn global bin`"
+export PATH="$PATH:$HOME/.yarn/bin"
 
 # Add gem bin dir to PATH
 #export PATH=$PATH:~/.gem/ruby/2.1.0/bin
@@ -148,6 +148,11 @@ antigen theme bhilburn/powerlevel9k powerlevel9k
 
 # Tell antigen that you're done.
 antigen apply
+
+# these aliases need to be after antigen, otherwise they get overridden
+alias ll="exa -l --git --time-style=long-iso --group-directories-first"
+alias l="exa -la --git --time-style=long-iso --group-directories-first"
+alias la="exa -lahg --git --time-style=long-iso --group-directories-first"
 
 # https://github.com/rupa/z
 . ~/Apps/z-1.11/z.sh
