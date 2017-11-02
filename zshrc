@@ -69,7 +69,7 @@ alias grep="grep -i"  # ignore case
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(composer symfony2 vagrant)
+#plugins=(composer symfony2 vagrant)
 
 # Customize to your needs...
 export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/Apps
@@ -110,8 +110,15 @@ source ~/antigen/antigen.zsh
 antigen use oh-my-zsh
 
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
-#antigen bundle git
-antigen bundle command-not-found
+antigen bundle git
+antigen bundle npm
+antigen bundle tig
+antigen bundle z
+antigen bundle yarn
+antigen bundle vagrant
+antigen bundle composer
+antigen bundle symfony2
+#antigen bundle command-not-found
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -153,9 +160,6 @@ antigen apply
 alias ll="exa -l --git --time-style=long-iso --group-directories-first"
 alias l="exa -la --git --time-style=long-iso --group-directories-first"
 alias la="exa -lahg --git --time-style=long-iso --group-directories-first"
-
-# https://github.com/rupa/z
-. ~/Apps/z-1.11/z.sh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
