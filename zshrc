@@ -69,10 +69,10 @@ alias la="exa -lahg --git --time-style=long-iso --group-directories-first"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(composer symfony2 vagrant fuck)
+plugins=(composer symfony2 vagrant)
 
 # Customize to your needs...
-export PATH=$PATH:/usr/lib/lightdm/lightdm:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/Apps
+export PATH=$PATH:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:~/Apps
 
 # Add composer bin dir to PATH
 export PATH=$PATH:vendor/bin:~/.composer/vendor/bin
@@ -87,27 +87,14 @@ export PATH="$PATH:`yarn global bin`"
 #export PATH=$PATH:~/.gem/ruby/2.1.0/bin
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin
 
-# add sbt to PATH
-export PATH=$PATH:/opt/sbt/bin
-
-# add cabal to PATH
-export PATH=$PATH:~/.cabal/bin
-
 # add android tools to PATH
 #export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools
 export PATH=$PATH:~/Apps/android-sdk-linux/tools:~/Apps/android-sdk-linux/platform-tools
-
-# add genymotion to PATH
-export PATH=$PATH:/media/extra/home/kalle/Apps/genymotion
-export GENYMOTION_APP="/media/extra/home/kalle/Apps/genymotion"
-export GENYMOTION_SHELL="/media/extra/home/kalle/Apps/genymotion"
 
 # see https://getcomposer.org/doc/articles/troubleshooting.md#xdebug-impact-on-composer
 export COMPOSER_DISABLE_XDEBUG_WARN=1
 
 DEFAULT_USER="kalle"
-
-#. /home/kalle/Apps/powerline/powerline/bindings/zsh/powerline.zsh
 
 say() {
     espeak "$@" 2>/dev/null;
@@ -116,15 +103,6 @@ say() {
 sano() {
     espeak -s 130 -v fi "$@" 2>/dev/null;
 }
-
-
-## Consifure tiny-care-terminal
-# https://github.com/notwaldorf/tiny-care-terminal/blob/master/README.md
-export TTC_REPOS="~/projects,~/projects/smps-messi-symfony/vendor/w3/smps-messi-legacy,~/projects/smps-messi-symfony/vendor/w3/messi-bundles"
-export TTC_GITBOT="gitlog"
-export TTC_WEATHER="Helsinki"
-export TTC_APIKEYS=false
-
 
 source ~/antigen/antigen.zsh
 
@@ -153,6 +131,7 @@ bindkey '^\n' autosuggest-execute
 
 # Theme: powerlevel9k
 ## https://github.com/bhilburn/powerlevel9k
+POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 ## configurations:
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir vcs)
@@ -172,8 +151,6 @@ antigen apply
 
 # https://github.com/rupa/z
 . ~/Apps/z-1.11/z.sh
-
-export N_PREFIX="$HOME/n"; [[ :$PATH: == *":$N_PREFIX/bin:"* ]] || PATH+=":$N_PREFIX/bin"  # Added by n-install (see http://git.io/n-install-repo).
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
