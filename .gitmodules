@@ -13,3 +13,6 @@
 [submodule "fzf"]
 	path = fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "nvm"]
+	path = nvm
+	url = https://github.com/creationix/nvm

@@ -25,9 +25,13 @@
     ~/.vimrc: ~
     ~/.vim/bundle: vim/bundle
 
+    # nvm
+    ~/.nvm: ~
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
   - [fc-cache -f ~/.fonts, Rebuilding font cache]
   - [~/.fzf/install --all, Installing fzf]
   - [vim +PluginInstall +qall, Installing vim plugins with Vundle]
+  - [node -v, Remember to install node with "nvm install node"]
 
