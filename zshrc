@@ -122,14 +122,14 @@ antigen bundle composer
 antigen bundle symfony2
 #antigen bundle command-not-found
 
-# Syntax highlighting bundle.
-antigen bundle zsh-users/zsh-syntax-highlighting
-
 # Fish-like autosuggestions for zsh
 antigen bundle tarruda/zsh-autosuggestions
 
 bindkey '^ ' autosuggest-accept
 bindkey '^\n' autosuggest-execute
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-syntax-highlighting
 
 # Load the theme.
 #antigen theme agnoster
