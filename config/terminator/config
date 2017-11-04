@@ -48,7 +48,7 @@
     cursor_color = "#58e0d3"
     font = "SourceCodePro+Powerline+Awesome Regular, 13"
     foreground_color = "#e6eaed"
-    palette = "#263238:#ff5252:#9ccc65:#fee94e:#2b98f0:#b38bfc:#68b6f3:#eceff1:#617d8a:#fc625d:#8cb75e:#fee94e:#2b98f0:#b38bfc:#68b6f3:#ffffff"
+    palette = "#263238:#ec407a:#8bc34a:#ffa726:#2196f3:#9575cd:#00bcd4:#eceff1:#617d8a:#ec407a:#9ccc65:#ffb74d:#42a5f5:#b39ddb:#26c6da:#ffffff"
     use_system_font = False
   [[custom]]
     background_color = "#263238"
