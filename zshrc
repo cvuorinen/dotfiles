@@ -87,6 +87,9 @@ export PATH="$PATH:$HOME/.yarn/bin"
 #export PATH=$PATH:~/.gem/ruby/2.1.0/bin
 export PATH=$PATH:~/.gem/ruby/2.2.0/bin
 
+# Add cabal bin to PATH
+export PATH="$PATH:$HOME/.cabal/bin"
+
 # add android tools to PATH
 #export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools
 export PATH=$PATH:~/Apps/android-sdk-linux/tools:~/Apps/android-sdk-linux/platform-tools
@@ -120,6 +123,7 @@ antigen bundle yarn
 antigen bundle vagrant
 antigen bundle composer
 antigen bundle symfony2
+antigen bundle thefuck
 #antigen bundle command-not-found
 
 # Fish-like autosuggestions for zsh
