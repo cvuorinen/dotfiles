@@ -19,7 +19,6 @@ export EDITOR="$VISUAL"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias bower="noglob bower"
 alias composer="noglob composer"
 alias npm="noglob npm"
 alias xphp="php -d xdebug.remote_autostart=1"
@@ -85,7 +84,7 @@ export PATH="$PATH:$HOME/.yarn/bin"
 
 # Add gem bin dir to PATH
 #export PATH=$PATH:~/.gem/ruby/2.1.0/bin
-export PATH=$PATH:~/.gem/ruby/2.2.0/bin
+export PATH=$PATH:~/.gem/ruby/2.3.0/bin
 
 # Add cabal bin to PATH
 export PATH="$PATH:$HOME/.cabal/bin"
@@ -107,8 +106,6 @@ sano() {
     espeak -s 130 -v fi "$@" 2>/dev/null;
 }
 
-# antigen cache does not work well with POWERLEVEL9K_MODE='awesome-patched'
-ANTIGEN_CACHE=false
 source ~/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.

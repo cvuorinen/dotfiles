@@ -22,7 +22,7 @@
     trash = !git add . && git commit -m 'trash' && git reset --hard HEAD^
     clean-merged = !git branch --merged master | grep -v "master$" | xargs -n 1 git branch -d
     latest = for-each-ref --sort=-committerdate refs/heads/
-    lol = log --pretty=oneline --abbrev-commit --graph --decorate
+    lol = log --pretty=format:'%Cred%h%Creset %C(blue)%cd %Cgreen%an %C(yellow)%d%Creset %Creset %s' --abbrev-commit --graph --date=format:'%Y-%m-%d %H:%M'
 [diff]
     tool = vimdiff
 [difftool]
