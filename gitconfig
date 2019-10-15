@@ -17,12 +17,14 @@
     co = checkout
     cob = checkout -b
     ca = commit --amend
+    pop = stash pop
     undo = reset HEAD~1 --mixed
     wip = commit -am "WIP"
     trash = !git add . && git commit -m 'trash' && git reset --hard HEAD^
     clean-merged = !git branch --merged master | grep -v "master$" | xargs -n 1 git branch -d
     latest = for-each-ref --sort=-committerdate refs/heads/
     lol = log --pretty=format:'%Cred%h%Creset %C(blue)%cd %Cgreen%an %C(yellow)%d%Creset %Creset %s' --abbrev-commit --graph --date=format:'%Y-%m-%d %H:%M'
+    github = !git ls-remote --get-url origin | sed 's|git@github.com:|https://github.com/|' | xargs xdg-open
 [diff]
     tool = vimdiff
 [difftool]
@@ -31,4 +33,7 @@
     enabled = true
     autoupdate = true
 [init]
+
+[help]
+    autocorrect = 20
 
