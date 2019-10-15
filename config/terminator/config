@@ -7,11 +7,14 @@
   go_left = <Primary><Shift>Left
   go_right = <Primary><Shift>Right
   go_up = <Primary><Shift>Up
+  next_tab = <Primary>Tab
   paste = <Primary>v
+  prev_tab = <Primary><Shift>Tab
 [layouts]
   [[default]]
     [[[child1]]]
       parent = window0
+      profile = default
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -49,6 +52,7 @@
     font = "SourceCodePro+Powerline+Awesome Regular, 13"
     foreground_color = "#e6ebf0"
     palette = "#263238:#ec407a:#8bc34a:#ffa726:#2196f3:#9575cd:#00bcd4:#eceff1:#617d8a:#ec407a:#9ccc65:#ffb74d:#42a5f5:#b39ddb:#26c6da:#ffffff"
+    scrollback_lines = 5000
     use_system_font = False
   [[custom]]
     background_color = "#263238"
