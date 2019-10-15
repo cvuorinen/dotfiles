@@ -11,3 +11,9 @@
 .classpath
 .vscode
 .cache
+*.code-workspace
+
+# maidfile (for using https://github.com/egoist/maid to handle project specific tasks)
+# (might have to use some other filename if ever start using maidfile that's committed to repo)
+maidfile.md
+
