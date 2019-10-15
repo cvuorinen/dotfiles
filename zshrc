@@ -29,8 +29,12 @@ alias FUCK='fuck'
 
 alias ffmpeg='avconv'
 alias prettyjson='python -m json.tool'
+alias matrix='cmatrix -bs'
+alias decrypt='nms -a'
 
-alias cap2="cap _2.15.9_"
+alias dup="docker-compose up -d"
+alias ddown="docker-compose down"
+alias dstop="docker-compose stop"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -38,6 +42,12 @@ alias cp="cp -iv"     # interactive, verbose
 alias rm="rm -i"      # interactive
 alias mv="mv -iv"     # interactive, verbose
 alias grep="grep -i"  # ignore case
+
+# Use bat as replacement for cat & less
+# see https://github.com/sharkdp/bat/blob/master/README.md#installation
+export BAT_THEME="base16"
+alias cat='bat'
+#alias less='bat'
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -121,6 +131,8 @@ antigen bundle vagrant
 antigen bundle composer
 antigen bundle symfony2
 antigen bundle thefuck
+antigen bundle docker
+antigen bundle docker-compose
 #antigen bundle command-not-found
 
 # Fish-like autosuggestions for zsh
@@ -145,7 +157,8 @@ POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 ## configurations:
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir dir_writable vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+#POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="white"
 POWERLEVEL9K_STATUS_VERBOSE=false
@@ -170,6 +183,9 @@ alias la="exa -lahg --git --time-style=long-iso --group-directories-first"
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# completion for https://github.com/egoist/maid
+export FPATH=$(npm root -g)/maid/completion/zsh:$FPATH
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
