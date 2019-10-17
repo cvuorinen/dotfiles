@@ -15,7 +15,7 @@
     ~/.zshrc: ~
     ~/.fonts: ~
     ~/.fzf: ~
-    ~/.config/terminator: config/terminator
+    ~/.tmux.conf: ~
 
     # git
     ~/.gitconfig: ~

@@ -1,0 +1,17 @@
+[:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+foreground-color='rgb(230,235,240)'
+visible-name='material'
+login-shell=false
+palette=['rgb(38,50,56)', 'rgb(236,64,122)', 'rgb(139,195,74)', 'rgb(255,167,38)', 'rgb(33,150,243)', 'rgb(149,117,205)', 'rgb(0,188,212)', 'rgb(236,239,241)', 'rgb(97,125,138)', 'rgb(236,64,122)', 'rgb(156,204,101)', 'rgb(255,183,77)', 'rgb(66,165,245)', 'rgb(179,157,219)', 'rgb(38,198,218)', 'rgb(255,255,255)']
+custom-command='tmux new -A -s default'
+default-size-rows=35
+default-size-columns=150
+use-system-font=false
+use-custom-command=true
+use-theme-colors=false
+use-transparent-background=true
+font='SourceCodePro+Powerline+Awesome Regular, 12'
+use-theme-transparency=false
+background-color='rgb(25,30,35)'
+background-transparency-percent=10
+scrollbar-policy='never'
