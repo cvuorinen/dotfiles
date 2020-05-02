@@ -116,6 +116,8 @@ sano() {
     espeak -s 130 -v fi "$@" 2>/dev/null;
 }
 
+ZSH_TMUX_AUTOSTART=true
+
 source ~/antigen/antigen.zsh
 
 # Load the oh-my-zsh's library.
@@ -124,6 +126,7 @@ antigen use oh-my-zsh
 # Bundles from the default repo (robbyrussell's oh-my-zsh).
 antigen bundle git
 antigen bundle npm
+antigen bundle nvm
 antigen bundle tig
 antigen bundle z
 antigen bundle yarn
@@ -133,6 +136,7 @@ antigen bundle symfony2
 antigen bundle thefuck
 antigen bundle docker
 antigen bundle docker-compose
+antigen bundle tmux
 #antigen bundle command-not-found
 
 # Fish-like autosuggestions for zsh
@@ -158,7 +162,7 @@ POWERLEVEL9K_INSTALLATION_PATH=$ANTIGEN_BUNDLES/bhilburn/powerlevel9k
 POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status context dir dir_writable vcs)
 #POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(time)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(nvm)
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="white"
 POWERLEVEL9K_STATUS_VERBOSE=false
@@ -169,8 +173,11 @@ POWERLEVEL9K_COLOR_SCHEME='light'
 POWERLEVEL9K_VCS_GIT_ICON='\uE1AA'
 POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uE1AA'
 POWERLEVEL9K_HIDE_BRANCH_ICON=true
+POWERLEVEL9K_NVM_BACKGROUND='black'
+POWERLEVEL9K_NVM_FOREGROUND='green'
 
-antigen theme bhilburn/powerlevel9k powerlevel9k
+#antigen theme bhilburn/powerlevel9k powerlevel9k
+antigen theme romkatv/powerlevel10k
 
 # Tell antigen that you're done.
 antigen apply
@@ -180,9 +187,32 @@ alias ll="exa -l --git --time-style=long-iso --group-directories-first"
 alias l="exa -la --git --time-style=long-iso --group-directories-first"
 alias la="exa -lahg --git --time-style=long-iso --group-directories-first"
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+#export NVM_DIR="$HOME/.nvm"
+#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# .nvmrc deeper integration
+# see https://github.com/nvm-sh/nvm#nvmrc
+autoload -U add-zsh-hook
+load-nvmrc() {
+  local node_version="$(nvm version)"
+  local nvmrc_path="$(nvm_find_nvmrc)"
+
+  if [ -n "$nvmrc_path" ]; then
+    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+
+    if [ "$nvmrc_node_version" = "N/A" ]; then
+      nvm install
+    elif [ "$nvmrc_node_version" != "$node_version" ]; then
+      nvm use
+    fi
+  elif [ "$node_version" != "$(nvm version default)" ]; then
+    echo "Reverting to nvm default version"
+    nvm use default
+  fi
+}
+add-zsh-hook chpwd load-nvmrc
+load-nvmrc
 
 # completion for https://github.com/egoist/maid
 export FPATH=$(npm root -g)/maid/completion/zsh:$FPATH

@@ -18,6 +18,7 @@
     cob = checkout -b
     ca = commit --amend
     pop = stash pop
+    cherry = cherry-pick
     undo = reset HEAD~1 --mixed
     wip = commit -am "WIP"
     trash = !git add . && git commit -m 'trash' && git reset --hard HEAD^

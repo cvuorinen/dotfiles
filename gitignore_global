@@ -2,6 +2,7 @@
 ######################
 .vagrant
 .ant_targets
+docker-compose.override.yml
 
 # IDE specific files #
 ######################
