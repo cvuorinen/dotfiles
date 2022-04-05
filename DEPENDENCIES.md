@@ -19,8 +19,8 @@ sudo apt install zsh
 chsh -s $(which zsh)
 ```
 
-## Terminator
+## Tmux
 
 ```
-sudo apt install terminator
+sudo apt install tmux
 ```
