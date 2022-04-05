@@ -21,10 +21,11 @@ export EDITOR="$VISUAL"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias composer="noglob composer"
 alias npm="noglob npm"
-alias xphp="php -d xdebug.remote_autostart=1"
+#alias xphp="php -d xdebug.remote_autostart=1"
+alias xphp="php -d xdebug.mode=debug -d xdebug.start_with_request=yes"
 alias suplemon="python3 ~/Apps/suplemon/main.py"
 
-alias fuck='$(thefuck $(fc -ln -1))'
+eval $(thefuck --alias)
 alias FUCK='fuck'
 
 alias ffmpeg='avconv'
@@ -32,6 +33,7 @@ alias prettyjson='python -m json.tool'
 alias matrix='cmatrix -bs'
 alias decrypt='nms -a'
 
+alias dc="docker-compose"
 alias dup="docker-compose up -d"
 alias ddown="docker-compose down"
 alias dstop="docker-compose stop"
@@ -88,6 +90,8 @@ export PATH=$PATH:vendor/bin:~/.composer/vendor/bin
 
 # Add npm bin dirs to PATH
 export PATH=$PATH:node_modules/.bin:~/.npm/bin
+#stupid nvm prefix config stuff :(
+#export PATH=$PATH:$HOME/.nvm/versions/node/v8.14.0/bin
 
 # add yarn bin dir to PATH
 export PATH="$PATH:$HOME/.yarn/bin"
@@ -103,6 +107,9 @@ export PATH="$PATH:$HOME/.cabal/bin"
 #export PATH=$PATH:/opt/android-sdk-linux/tools:/opt/android-sdk-linux/platform-tools
 export PATH=$PATH:~/Apps/android-sdk-linux/tools:~/Apps/android-sdk-linux/platform-tools
 
+# Add flutter bin to PATH
+export PATH="$PATH:$HOME/Apps/flutter/bin"
+
 # see https://getcomposer.org/doc/articles/troubleshooting.md#xdebug-impact-on-composer
 export COMPOSER_DISABLE_XDEBUG_WARN=1
 
@@ -116,7 +123,8 @@ sano() {
     espeak -s 130 -v fi "$@" 2>/dev/null;
 }
 
-ZSH_TMUX_AUTOSTART=true
+# some js tests need this env variable, but I have Chromium installed as flatpak
+export CHROMIUM_BIN="$HOME/.local/share/flatpak/exports/bin/org.chromium.Chromium"
 
 source ~/antigen/antigen.zsh
 
@@ -176,8 +184,7 @@ POWERLEVEL9K_HIDE_BRANCH_ICON=true
 POWERLEVEL9K_NVM_BACKGROUND='black'
 POWERLEVEL9K_NVM_FOREGROUND='green'
 
-#antigen theme bhilburn/powerlevel9k powerlevel9k
-antigen theme romkatv/powerlevel10k
+antigen theme bhilburn/powerlevel9k powerlevel9k
 
 # Tell antigen that you're done.
 antigen apply
@@ -216,6 +223,12 @@ load-nvmrc
 
 # completion for https://github.com/egoist/maid
 export FPATH=$(npm root -g)/maid/completion/zsh:$FPATH
+
+# completion for GitHub CLI
+#eval "$(gh completion -s zsh)"
+# gh completions exported to /usr/local/share/zsh/site-functions/_gh
+autoload -U compinit
+compinit -i
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
@@ -399,3 +412,6 @@ bind-git-helper() {
 bind-git-helper f b t r h
 unset -f bind-git-helper
 
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
