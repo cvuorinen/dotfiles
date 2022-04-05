@@ -1,0 +1,5 @@
+set mouse = yes
+set wrap-lines = yes
+set main-view-id-display = yes
+set main-view-date = custom
+set main-view-date-format = "%Y-%m-%d %H:%M"

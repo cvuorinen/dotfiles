@@ -17,9 +17,10 @@
     ~/.fzf: ~
     ~/.tmux.conf: ~
 
-    # git
+    # git & tig
     ~/.gitconfig: ~
     ~/.gitignore_global: ~
+    ~/.tigrc: ~
 
     # vim
     ~/.vimrc: ~

@@ -8,6 +8,8 @@
     ui = true
 [push]
     default = simple
+[checkout]
+    defaultRemote=origin
 [alias]
     c = commit
     a = add
@@ -31,10 +33,16 @@
 [difftool]
     prompt = false
 [rerere]
-    enabled = true
+	enabled = true
     autoupdate = true
 [init]
+	defaultBranch = main
 
 [help]
     autocorrect = 20
 
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
