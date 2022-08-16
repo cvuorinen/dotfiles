@@ -8,6 +8,7 @@
     ui = true
 [push]
     default = simple
+    autoSetupRemote = true
 [checkout]
     defaultRemote=origin
 [alias]
@@ -33,16 +34,20 @@
 [difftool]
     prompt = false
 [rerere]
-	enabled = true
+    enabled = true
     autoupdate = true
 [init]
-	defaultBranch = main
+    defaultBranch = main
 
 [help]
     autocorrect = 20
 
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+
+# fix for npm ls-remote issue https://github.com/npm/cli/issues/1673
+[url "git@github.com:"]
+    insteadOf = git://github.com/
