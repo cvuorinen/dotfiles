@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export TERM="xterm-256color"
 
 # Path to your oh-my-zsh configuration.
@@ -37,6 +44,13 @@ alias dc="docker-compose"
 alias dup="docker-compose up -d"
 alias ddown="docker-compose down"
 alias dstop="docker-compose stop"
+alias dexec="docker-compose exec"
+
+# Apuri docker-compose helper
+alias d="./docker/dev"
+
+alias lg="lazygit"
+alias ld="lazydocker"
 
 alias ..='cd ..'
 alias ...='cd ../..'
@@ -48,7 +62,7 @@ alias grep="grep -i"  # ignore case
 # Use bat as replacement for cat & less
 # see https://github.com/sharkdp/bat/blob/master/README.md#installation
 export BAT_THEME="base16"
-alias cat='bat'
+#alias cat='bat'
 #alias less='bat'
 
 # Set to this to use case-sensitive completion
@@ -415,3 +429,7 @@ unset -f bind-git-helper
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# Load Angular CLI autocompletion.
+source <(ng completion script)
