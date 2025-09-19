@@ -17,6 +17,7 @@
     b = branch
     p = pull --rebase
     s = status
+    f = fetch
     co = checkout
     cob = checkout -b
     ca = commit --amend
@@ -51,3 +52,11 @@
 # fix for npm ls-remote issue https://github.com/npm/cli/issues/1673
 [url "git@github.com:"]
     insteadOf = git://github.com/
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[rebase]
+	autosquash = true
